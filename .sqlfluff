@@ -1,0 +1,6 @@
+[sqlfluff]
+dialect = clickhouse
+exclude_rules = CP05, CP03
+
+[sqlfluff:indentation]
+tab_space_size = 4
