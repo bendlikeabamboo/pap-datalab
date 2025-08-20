@@ -1,4 +1,4 @@
-create table if not exists dim_administrative_area
+create table if not exists psgc.dim_administrative_area
 (
     surrogate_id UUID default generateUUIDv4(),
     ingestion_datetime DateTime ('Asia/Manila') default now('Asia/Manila'),
