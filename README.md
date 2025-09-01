@@ -1,5 +1,5 @@
 # 🧪 pap-datalab
-Data laboratory for __Punan ang Patlang__ project
+Data laboratory for __Punan ang Patlang__ project.
 
 ## 📦 Dependencies
 Using `pap-datalab` requires
@@ -27,6 +27,10 @@ database (but no data yet!)
 1. Run all notebooks under `notebooks/`
 
 ## 📍 What's next
-You should now have a sort of working database stack + data. You can of course add your
-data apart from the one provided, create your own database & tables, etc. But, of
-course, don't forget to share! Happy crunching! 😋
+You should now have a sort of working database stack + data. You can now
+- Use the Apache Superset Instance to:
+    - Explore your data (SQL Lab);
+    - Create charts (Charts);
+    - or create dashboards (Dashboard)
+- Create new data generating notebooks
+
