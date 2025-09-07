@@ -224,15 +224,13 @@ dev = ["backports.zoneinfo ; python_version < \"3.9\"", "freezegun (>=1.0,<2.0)"
 
 [[package]]
 name = "barangay"
-version = "2025.7.8.4.post1"
+version = "2025.7.31.1"
 description = "Philippines Standard Geographic Code (PSGC) 2025 Python package, Fuzzy Search, JSON, and YAML."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
-files = [
-    {file = "barangay-2025.7.8.4.post1-py3-none-any.whl", hash = "sha256:e3123fb19ec3c1582e2617f900bc382fca9c904b604e6089c68dc89f00610f0d"},
-    {file = "barangay-2025.7.8.4.post1.tar.gz", hash = "sha256:0a7c0da9ce6fb1c2cfd9a26ea421b9aba56d97002321afd357b9f856a0ec9e0e"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 fastparquet = ">=2024.11.0,<2025.0.0"
@@ -240,6 +238,10 @@ pandas = ">=2.3.2,<3.0.0"
 pyarrow = ">=21.0.0,<22.0.0"
 pydantic = ">=2.11.7,<3.0.0"
 rapidfuzz = ">=3.14.0,<4.0.0"
+
+[package.source]
+type = "directory"
+url = "../../barangay"
 
 [[package]]
 name = "beautifulsoup4"
@@ -3837,4 +3839,4 @@ cffi = ["cffi (>=1.17) ; python_version >= \"3.13\" and platform_python_implemen
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12, <4.0"
-content-hash = "7b0063e9875824a204541b90cbd3c43a01cb4d99398fa809371c4dbe142a0d28"
+content-hash = "98fa6f0c81f4f5a883993688b9b6166ed27e18e1b0effb9aab8eebe73e33a537"
