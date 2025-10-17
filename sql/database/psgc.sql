@@ -1,1 +1,1 @@
-create database psgc;
+create database depdev;
