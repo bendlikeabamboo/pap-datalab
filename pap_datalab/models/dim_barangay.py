@@ -3,11 +3,18 @@ import datetime as dt
 from clickhouse_sqlalchemy import engines, types
 from sqlalchemy import Column
 
-from .base import Base
-from .types import BarangayStatusEnum, SettlementTypeEnum, asia_timezone
+from pap_datalab import schema_registries
+from pap_datalab.models.types import (
+    BarangayStatusEnum,
+    SettlementTypeEnum,
+    asia_timezone,
+)
+
+depdev_registry = schema_registries["depdev"]
 
 
-class DimBarangay(Base):
+@depdev_registry.mapped
+class DimBarangay:
     __tablename__ = "dim_barangay"
     surrogate_id = Column(types.String, primary_key=True)
     ingestion_datetime = Column(
