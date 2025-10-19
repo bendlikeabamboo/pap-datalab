@@ -7,10 +7,13 @@ from typing import Tuple
 from sqlalchemy import create_engine, Engine
 
 
-class PapDatalabEngine:
+class PapDatalab:
 
-    def __init__(self, environment: str):
-        load_dotenv(dotenv_path=f"{environment}.env")
+    def __init__(self, environment: str, environment_path: str | None = None):
+        if environment_path:
+            load_dotenv(dotenv_path=f"{environment_path}")
+        else:
+            load_dotenv(dotenv_path=f"{environment}.env")
 
     def _db_from_env(
         self,

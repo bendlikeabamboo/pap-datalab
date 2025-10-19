@@ -41,12 +41,18 @@ def ensure_setup(environment: str):
     Ensure that the ClickHouse tables are properly setup for our notebook pipelines.
     """
     _logger.info("Running ensure-setup...")
-    from pap_datalab.engine import PapDatalabEngine
+    from pap_datalab.engine import PapDatalab
+    from pap_datalab import models
 
     for database in SCHEMAS:
-        engine = PapDatalabEngine(environment).get_engine(database)
+        engine = PapDatalab(environment).get_engine(database)
         _logger.info(f"Creating all tables for '{database}'...")
-        schema_registries[database].metadata.create_all(engine, checkfirst=True)
+        for table_name, table in schema_registries[database].metadata.tables.items():
+            _logger.info(f"\tCreating table in '{database}': {table_name}")
+
+            schema_registries[database].metadata.create_all(
+                engine, tables=[table], checkfirst=True
+            )
 
 
 if __name__ == "__main__":
