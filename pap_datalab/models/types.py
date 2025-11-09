@@ -26,7 +26,7 @@ BarangayStatusEnum = Enum(
 IncomeClassificationEnum = Enum(
     "IncomeClassificationEnumORM",
     [
-        ("1st", 1),
+        ("1st", 1),   
         ("1st*", 2),
         ("2nd", 3),
         ("2nd*", 4),

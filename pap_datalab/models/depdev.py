@@ -3,8 +3,8 @@ import datetime as dt
 from clickhouse_sqlalchemy import engines, types
 from sqlalchemy import Column
 
-from pap_datalab import schema_registries
-from pap_datalab.models.types import (
+from .. import schema_registries
+from .types import (
     BarangayStatusEnum,
     SettlementTypeEnum,
     IncomeClassificationCleanEnum,
@@ -29,6 +29,8 @@ class FactBarangay:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
 
@@ -50,6 +52,8 @@ class DimBarangay:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
 
@@ -67,6 +71,8 @@ class FactMunicipality:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
 
@@ -93,6 +99,8 @@ class DimMunicipality:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
 
@@ -110,6 +118,8 @@ class FactSubmunicipality:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
 
@@ -129,6 +139,8 @@ class DimSubmunicipality:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
 
@@ -146,6 +158,8 @@ class FactCity:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
 
@@ -173,6 +187,8 @@ class DimCity:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
 
@@ -190,6 +206,8 @@ class FactProvince:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
 
@@ -215,6 +233,8 @@ class DimProvince:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
 
@@ -232,6 +252,8 @@ class FactRegion:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
 
@@ -251,7 +273,7 @@ class DimRegion:
     identity_hash = Column(types.String)
     fields_hash = Column(types.String)
     valid_from = Column(asia_timezone)
+    valid_to = Column(asia_timezone)
+    version = Column(types.UInt32)
     engine = engines.MergeTree(order_by=["surrogate_id"])
     __table_args__ = (engines.MergeTree(order_by=["surrogate_id"]),)
-
-    ##

@@ -1,6 +1,6 @@
 {
-    "name": "PSGC-3Q-2025-Publication-Datafile.xlsx",
-    "valid_from": "2025-10-13T00:00:00+08:00",
+    "name": "PSGC-July-2025-Publication-Datafile.xlsx",
+    "valid_from": "2025-08-29T00:00:00+08:00",
     "column_mappings": {
         "10-digit PSGC": "psgc_id",
         "Name": "psgc_name",
@@ -10,7 +10,7 @@
         "City Class": "city_class",
         "Income\r\nClassification (DOF DO No. 074.2024)": "income_classification",
         "Urban / Rural\r\n(based on 2020 CPH)": "settlement_type",
-        "2024 Population": "population",
+        "2020 Population": "population",
         "__UNNAMED__9": "remarks",
         "Status": "status"
     },
